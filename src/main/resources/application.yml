@@ -16,9 +16,9 @@ spring:
         format_sql: true
         use_sql_comments: true
   redis:
-    host: 10.206.34.167
+    host: localhost
     port: 6379
-    password: ${SPRING_REDIS_PASSWORD:3pc4=1iv8n7.G4?S}
+#    password: ${SPRING_REDIS_PASSWORD:3pc4=1iv8n7.G4?S}
   main:
     allow-bean-definition-overriding: true
 
