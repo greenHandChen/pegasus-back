@@ -320,6 +320,7 @@
             <version>1.3</version>
         </dependency>
 
+        <!-- rocketmq -->
         <dependency>
             <groupId>org.apache.rocketmq</groupId>
             <artifactId>rocketmq-client</artifactId>
@@ -332,6 +333,28 @@
             <artifactId>rocketmq-acl</artifactId>
             <version>4.6.0</version>
         </dependency>
+        <!-- rocketmq -->
+
+        <!-- awss3 -->
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk-s3</artifactId>
+            <version>1.11.347</version>
+        </dependency>
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk</artifactId>
+            <version>1.7.4</version>
+        </dependency>
+        <!-- awss3 -->
+
+        <!-- java sql 解析 -->
+        <dependency>
+            <groupId>com.github.jsqlparser</groupId>
+            <artifactId>jsqlparser</artifactId>
+            <version>3.1</version>
+        </dependency>
+        <!-- java sql 解析 -->
     </dependencies>
 
 

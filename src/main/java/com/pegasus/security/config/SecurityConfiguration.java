@@ -1,6 +1,7 @@
 package com.pegasus.security.config;
 
 import com.pegasus.security.CustomAuthenticationSuccessHandler;
+import com.pegasus.security.authentication.provider.NoUserDetailsAuthenticationProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -24,6 +25,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     private UserDetailsService userDetailsService;
     @Autowired
     private CustomAuthenticationSuccessHandler authenticationSuccessHandler;
+    @Autowired(required = false)
+    @Qualifier("noUserDetailsAuthenticationProvider")
+    private NoUserDetailsAuthenticationProvider noUserDetailsAuthenticationProvider;
 
     @Override
     public void configure(WebSecurity web) throws Exception {
@@ -35,7 +39,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     public void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
                 .authorizeRequests()
-                .antMatchers("/login", "/jquery/**", "/bootstrap/**", "/img/**", "/layui/**","/oauth/token").permitAll()
+                .antMatchers("/login", "/jquery/**", "/bootstrap/**", "/img/**", "/layui/**", "/oauth/token").permitAll()
                 .and()
                 .authorizeRequests()
                 .anyRequest()
@@ -47,6 +51,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .csrf()
                 .disable();
+        // 设置自定义provider
+        httpSecurity.authenticationProvider(noUserDetailsAuthenticationProvider);
     }
 
     /**

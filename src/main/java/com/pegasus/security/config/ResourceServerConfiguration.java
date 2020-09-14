@@ -33,6 +33,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
                 .authorizeRequests()
                 .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 .antMatchers("/v1/activiti/approve-rule/list").permitAll()
+                .antMatchers("/v1/oauth/token/**").permitAll()
                 .antMatchers("/v1/**").authenticated();// 需要oauth2认证的url
 
     }
