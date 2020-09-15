@@ -33,18 +33,18 @@ import java.util.Map;
 /**
  * @author Dave Syer
  */
-public class ResourceNoOwnerPasswordTokenGranter extends AbstractTokenGranter {
+public class ResourceOwnerNoPasswordTokenGranter extends AbstractTokenGranter {
 
     private static final String GRANT_TYPE = "no_password";
 
     private final AuthenticationManager authenticationManager;
 
-    public ResourceNoOwnerPasswordTokenGranter(AuthenticationManager authenticationManager,
+    public ResourceOwnerNoPasswordTokenGranter(AuthenticationManager authenticationManager,
                                                AuthorizationServerTokenServices tokenServices, ClientDetailsService clientDetailsService, OAuth2RequestFactory requestFactory) {
         this(authenticationManager, tokenServices, clientDetailsService, requestFactory, GRANT_TYPE);
     }
 
-    protected ResourceNoOwnerPasswordTokenGranter(AuthenticationManager authenticationManager, AuthorizationServerTokenServices tokenServices,
+    protected ResourceOwnerNoPasswordTokenGranter(AuthenticationManager authenticationManager, AuthorizationServerTokenServices tokenServices,
                                                   ClientDetailsService clientDetailsService, OAuth2RequestFactory requestFactory, String grantType) {
         super(tokenServices, clientDetailsService, requestFactory, grantType);
         this.authenticationManager = authenticationManager;

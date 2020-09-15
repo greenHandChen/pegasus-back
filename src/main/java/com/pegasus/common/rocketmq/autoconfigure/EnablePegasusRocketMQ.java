@@ -8,5 +8,5 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Import(RocketMQAutoConfiguration.class)
-public @interface EnableCuxRocketMQ {
+public @interface EnablePegasusRocketMQ {
 }

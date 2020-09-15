@@ -1,7 +1,6 @@
 package com.pegasus.security.config;
 
-import com.pegasus.security.authentication.oauth.ResourceNoOwnerPasswordTokenGranter;
-import com.pegasus.security.service.LoginNoPasswordService;
+import com.pegasus.security.authentication.oauth.ResourceOwnerNoPasswordTokenGranter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -111,7 +110,7 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
         if (this.authenticationManager != null) {
             tokenGranters.add(new ResourceOwnerPasswordTokenGranter(this.authenticationManager, tokenServices, clientDetails, requestFactory));
             // 自定义授权器
-            tokenGranters.add(new ResourceNoOwnerPasswordTokenGranter(this.authenticationManager, tokenServices, clientDetails, requestFactory));
+            tokenGranters.add(new ResourceOwnerNoPasswordTokenGranter(this.authenticationManager, tokenServices, clientDetails, requestFactory));
         }
 
         return tokenGranters;
