@@ -3,14 +3,12 @@ package com.pegasus;
 import com.pegasus.common.rocketmq.autoconfigure.EnablePegasusRocketMQ;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 /**
  * Created by enHui.Chen on 2019/8/8.
  */
 @EnablePegasusRocketMQ
-@EnableDiscoveryClient
 @EnableAspectJAutoProxy(exposeProxy = true)
 @SpringBootApplication
 public class PegasusApplication {
