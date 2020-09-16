@@ -1,6 +1,0 @@
-server:
-  port: 8079
-
-spring:
-  profiles:
-    active: ${SPRING_PROFILES_ACTIVE:default}
