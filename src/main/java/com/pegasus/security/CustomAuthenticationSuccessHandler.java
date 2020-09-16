@@ -17,10 +17,10 @@ import java.io.IOException;
 @Component
 public class CustomAuthenticationSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandler {
 
-//    @PostConstruct
-//    private void init() {
-//        this.setDefaultTargetUrl("http://localhost:8000");
-//    }
+    @PostConstruct
+    private void init() {
+        this.setDefaultTargetUrl("http://localhost:80");
+    }
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
