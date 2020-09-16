@@ -1,6 +1,3 @@
-USER: user
-PASSWORD: user
-
 server:
   port: 8079
 management:
@@ -32,6 +29,6 @@ eureka:
   client:
     serviceUrl:
       # 注册中心地址
-      defaultZone: ${EUREKA_DEFAULT_ZONE:http://${USER}:${PASSWORD}@localhost:8000/eureka}
+      defaultZone: ${EUREKA_DEFAULT_ZONE:http://localhost:8000/eureka}
     registryFetchIntervalSeconds: 10
     disable-delta: true
